@@ -1,2 +1,16 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+	import App from './App.svelte';
+	import wasm from '../../rust/Cargo.toml';
+
+	const init = async () => {
+	      const bindings = await wasm();
+	      const app = new App({
+	      target: document.body,
+	      props: {
+	                bindings,
+	              },
+	    });
+	};
+
+	init();
+</script>

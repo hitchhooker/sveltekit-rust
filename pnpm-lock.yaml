@@ -4,6 +4,7 @@ specifiers:
   '@playwright/test': ^1.25.0
   '@sveltejs/adapter-auto': next
   '@sveltejs/kit': next
+  '@wasm-tool/rollup-plugin-rust': ^2.3.1
   eslint: ^8.16.0
   eslint-config-prettier: ^8.3.0
   eslint-plugin-svelte3: ^4.0.0
@@ -18,6 +19,7 @@ devDependencies:
   '@playwright/test': 1.26.1
   '@sveltejs/adapter-auto': 1.0.0-next.80
   '@sveltejs/kit': 1.0.0-next.507_svelte@3.50.1+vite@3.1.4
+  '@wasm-tool/rollup-plugin-rust': 2.3.1
   eslint: 8.24.0
   eslint-config-prettier: 8.5.0_eslint@8.24.0
   eslint-plugin-svelte3: 4.0.0_snydkosur25h6rjxszquwacaua
@@ -300,6 +302,21 @@ packages:
       - supports-color
     dev: true
 
+  /@wasm-tool/rollup-plugin-rust/2.3.1:
+    resolution: {integrity: sha512-H2Bgp0gadV/wd9xyfLne4dGKBitwZMw2YjJsmyGRPb4szEDQOhnISpySLfzdPw4NAyP24IP84DxAd3S1zMoYwA==}
+    dependencies:
+      '@rollup/pluginutils': 4.2.1
+      binaryen: 110.0.0
+      chalk: 4.1.2
+      glob: 8.0.3
+      node-fetch: 2.6.7
+      rimraf: 3.0.2
+      tar: 6.1.11
+      toml: 3.0.0
+    transitivePeerDependencies:
+      - encoding
+    dev: true
+
   /abbrev/1.1.1:
     resolution: {integrity: sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==}
     dev: true
@@ -390,6 +407,11 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
+  /binaryen/110.0.0:
+    resolution: {integrity: sha512-b1rQFvnjNIfuW0UYSBgwLIrKD9PaG0iEzWXyoWLBFp/HRdvgD+7LGUnxG+/yKz1+tyiTdRm/lFRxsmYXaULIUg==}
+    hasBin: true
+    dev: true
+
   /bindings/1.5.0:
     resolution: {integrity: sha512-p2q/t/mhvuOj/UeLlV6566GD/guowlr0hHxClI0W9m7MWYkL1F0hLo+0Aexs9HSPCtR1SXQ0TD3MMKrXZajbiQ==}
     dependencies:
@@ -401,6 +423,12 @@ packages:
     dependencies:
       balanced-match: 1.0.2
       concat-map: 0.0.1
+    dev: true
+
+  /brace-expansion/2.0.1:
+    resolution: {integrity: sha512-XnAIvQ8eM+kC6aULx6wuQiwVsnzsi9d3WxzV3FpWTGA19F621kwdbsAcFKXgKUHZWsy+mY6iL1sHTxWEFCytDA==}
+    dependencies:
+      balanced-match: 1.0.2
     dev: true
 
   /braces/3.0.2:
@@ -1047,6 +1075,17 @@ packages:
       path-is-absolute: 1.0.1
     dev: true
 
+  /glob/8.0.3:
+    resolution: {integrity: sha512-ull455NHSHI/Y1FqGaaYFaLGkNMMJbavMrEGFXG/PGrg6y7sutWHUHrz6gy6WEBH6akM1M414dWKCNs+IhKdiQ==}
+    engines: {node: '>=12'}
+    dependencies:
+      fs.realpath: 1.0.0
+      inflight: 1.0.6
+      inherits: 2.0.4
+      minimatch: 5.1.0
+      once: 1.4.0
+    dev: true
+
   /globals/13.17.0:
     resolution: {integrity: sha512-1C+6nQRb1GwGMKm2dH/E7enFAMxGTmGI7/dEdhy/DNelv85w9B72t3uc5frtMNXIbzrarJJ/lTCjcaZwbLJmyw==}
     engines: {node: '>=8'}
@@ -1274,6 +1313,13 @@ packages:
     resolution: {integrity: sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==}
     dependencies:
       brace-expansion: 1.1.11
+    dev: true
+
+  /minimatch/5.1.0:
+    resolution: {integrity: sha512-9TPBGGak4nHfGZsPBohm9AWg6NoT7QTCehS3BIJABslyZbzxfV78QM2Y6+i741OPZIafFAaiiEMh5OyIrJPgtg==}
+    engines: {node: '>=10'}
+    dependencies:
+      brace-expansion: 2.0.1
     dev: true
 
   /minimist/1.2.6:
@@ -1848,6 +1894,10 @@ packages:
     engines: {node: '>=8.0'}
     dependencies:
       is-number: 7.0.0
+    dev: true
+
+  /toml/3.0.0:
+    resolution: {integrity: sha512-y/mWCZinnvxjTKYhJ+pYxwD0mRLVvOtdS2Awbgxln6iEnt4rk0yBxeSBHkGJcPucRiG0e55mwWp+g/05rsrd6w==}
     dev: true
 
   /totalist/3.0.0:
